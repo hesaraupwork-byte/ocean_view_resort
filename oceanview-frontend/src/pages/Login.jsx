@@ -48,7 +48,7 @@ export default function Login() {
     if (r === "STAFF") return navigate("/staff/reservations", { replace: true });
 
     // default CUSTOMER
-    return navigate("/customer/dashboard", { replace: true });
+    return navigate("/customer/reservations", { replace: true });
   }
 
   async function onSubmit(e) {

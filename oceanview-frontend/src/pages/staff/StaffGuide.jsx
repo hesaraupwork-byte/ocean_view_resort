@@ -273,7 +273,9 @@ export default function StaffGuide() {
     try {
       const raw = localStorage.getItem("ov_staff_checklist");
       if (raw) return JSON.parse(raw);
-    } catch {}
+    } catch {
+      // ignore parsing errors and return default checklist
+    }
     return [
       { id: "c1", title: "Review PENDING reservations", desc: "Confirm/Cancel or update details", done: false },
       { id: "c2", title: "Check Questions inbox", desc: "Answer pending customer questions", done: false },
