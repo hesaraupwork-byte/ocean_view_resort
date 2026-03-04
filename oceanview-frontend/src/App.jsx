@@ -1,13 +1,59 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+// layouts
+import AdminLayout from "./layouts/AdminLayout";
+import MainLayout from "./layouts/MainLayout";
+
+// public pages
 import About from "./pages/About";
+import EnterOtp from "./pages/EnterOtp";
+import Faq from "./pages/Faq";
+import ForgotPassword from "./pages/ForgotPassword";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ResetPassword from "./pages/ResetPassword";
+
+// admin pages
+import AdminBills from "./pages/admin/AdminBills";
+import AdminProfile from "./pages/admin/AdminProfile"; // ✅ fixed
+import AdminQuestions from "./pages/admin/AdminQuestions";
+import AdminReservations from "./pages/admin/AdminReservations";
+import AdminUsers from "./pages/admin/AdminUsers";
+import RequireAdmin from "./routes/RequireAdmin";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        {/* ✅ Public Layout */}
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+
+          {/* password reset flow */}
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/enter-otp" element={<EnterOtp />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+        </Route>
+
+        {/* ✅ Admin Protected Layout */}
+        <Route element={<RequireAdmin />}>
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<AdminUsers />} /> {/* ✅ default admin page */}
+            <Route path="users" element={<AdminUsers />} />
+            <Route path="reservations" element={<AdminReservations />} />
+            <Route path="questions" element={<AdminQuestions />} />
+            <Route path="bills" element={<AdminBills />} />
+            <Route path="profile" element={<AdminProfile />} />
+          </Route>
+        </Route>
+
+        {/* optional fallback */}
+        <Route path="*" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

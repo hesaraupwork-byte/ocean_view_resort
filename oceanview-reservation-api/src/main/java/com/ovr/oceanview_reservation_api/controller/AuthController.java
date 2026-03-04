@@ -30,6 +30,11 @@ public class AuthController {
         authService.forgotPassword(req);
     }
 
+    @PostMapping("/verify-otp")
+    public void verifyOtp(@Valid @RequestBody VerifyOtpRequest req) {
+        authService.verifyOtp(req);
+    }
+
     @PostMapping("/reset-password")
     public void resetPassword(@Valid @RequestBody ResetPasswordRequest req) {
         authService.resetPassword(req);

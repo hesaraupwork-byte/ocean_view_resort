@@ -556,3 +556,235 @@ html,body,#root{
 @media (max-width: 576px){
   .ov-about-title{ font-size: 32px; }
 }
+
+
+
+/* ===== Popup modal + blur ===== */
+.ov-modal-backdrop{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  z-index: 999999;
+}
+
+.ov-modal{
+  width: min(760px, 96vw);
+  max-height: 86vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 24px 80px rgba(0,0,0,0.45);
+}
+
+.ov-no-scroll{
+  overflow: hidden;
+}
+
+/* ===== Smaller action buttons ===== */
+.ov-btn-xs{
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.ov-btn-soft{
+  border: 1px solid rgba(0,0,0,0.15);
+  background: #fff;
+  color: #111;
+}
+.ov-btn-soft:hover{ border-color: rgba(0,0,0,0.25); }
+
+.ov-btn-danger-soft{
+  border: 1px solid rgba(239,68,68,0.35);
+  background: rgba(239,68,68,0.08);
+  color: #991b1b;
+}
+.ov-btn-danger-soft:hover{ background: rgba(239,68,68,0.14); }
+
+/* confirm modal danger button */
+.ov-btn-danger{
+  background: #dc2626;
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 800;
+  padding: 10px 16px;
+  border: none;
+}
+.ov-btn-danger:hover{
+  background: #b91c1c;
+  color: #fff;
+}
+
+/* optional: a bit narrower confirm modal */
+.ov-confirm{
+  width: min(560px, 96vw);
+}
+
+
+/* =========================
+   ADMIN NAVBAR (STYLISH)
+========================= */
+
+.ov-admin-navbar{
+  background: rgba(17, 24, 39, 0.75); /* glass */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+
+.ov-admin-logo{
+  height: 52px;
+  width: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+.ov-admin-brand{
+  font-weight: 900;
+  color: #fff;
+  font-family: var(--font-heading);
+  letter-spacing: .3px;
+  font-size: 18px;
+}
+
+.ov-admin-sub{
+  color: rgba(255,255,255,0.70);
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.ov-admin-toggler{
+  border: 1px solid rgba(255,255,255,0.20) !important;
+  border-radius: 12px !important;
+}
+
+/* nav items */
+.ov-admin-link{
+  color: rgba(255,255,255,0.82) !important;
+  font-weight: 800;
+  border-radius: 999px;
+  padding: 8px 12px !important;
+  transition: all .15s ease;
+  position: relative;
+}
+
+.ov-admin-link:hover{
+  color: #fff !important;
+  background: rgba(255,255,255,0.08);
+}
+
+.ov-admin-link.active{
+  color: #fff !important;
+  background: rgba(255,122,26,0.16);
+  border: 1px solid rgba(255,122,26,0.28);
+}
+
+/* small underline accent */
+.ov-admin-link.active::after{
+  content:"";
+  position:absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--ov-orange);
+  opacity: .9;
+}
+
+/* profile chip */
+.ov-admin-chip{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+.ov-admin-chip-ic{
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  display:grid;
+  place-items:center;
+  background: rgba(255,122,26,0.18);
+  color: #fff;
+}
+
+.ov-admin-chip-name{
+  font-weight: 900;
+  font-size: 13px;
+  color: #fff;
+}
+
+.ov-admin-chip-email{
+  font-size: 12px;
+  color: rgba(255,255,255,0.72);
+}
+
+/* logout button */
+.ov-admin-logout{
+  background: #111;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 900;
+  transition: all .15s ease;
+}
+
+.ov-admin-logout:hover{
+  background: #000;
+  color: #fff;
+  border-color: rgba(255,255,255,0.24);
+}
+
+/* mobile spacing */
+@media (max-width: 991px){
+  .ov-admin-chip{ width: 100%; justify-content: flex-start; }
+  .ov-admin-logout{ width: 100%; }
+}
+
+
+.ov-btn-xs{
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+  font-size: 13px !important;
+}
+
+.ov-btn-soft{
+  background: rgba(255,122,26,0.14);
+  border: 1px solid rgba(255,122,26,0.28);
+  color: #111;
+}
+.ov-btn-soft:hover{
+  background: rgba(255,122,26,0.22);
+  border-color: rgba(255,122,26,0.36);
+}
+
+.ov-btn-danger{
+  background: #ef4444;
+  color: #fff;
+  border-radius: 999px;
+  font-weight: 900;
+}
+.ov-btn-danger:hover{ background:#dc2626; }
+
+.ov-btn-xs{
+  padding: 6px 10px !important;
+  border-radius: 999px !important;
+  font-weight: 900 !important;
+  font-size: 13px !important;
+}
