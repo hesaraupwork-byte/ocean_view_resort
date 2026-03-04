@@ -21,7 +21,6 @@ export default function Footer() {
             <ul className="ov-footer-list">
               <li><Link to="/" className="ov-footer-link">Home</Link></li>
               <li><Link to="/about" className="ov-footer-link">About</Link></li>
-              <li><Link to="/contact" className="ov-footer-link">Contact</Link></li>
               <li><Link to="/faq" className="ov-footer-link">FAQ</Link></li>
             </ul>
           </div>
@@ -31,7 +30,7 @@ export default function Footer() {
             <ul className="ov-footer-list">
               <li><Link to="/login" className="ov-footer-link">Login</Link></li>
               <li><Link to="/register" className="ov-footer-link">Register</Link></li>
-              <li><Link to="/reservations/new" className="ov-footer-link">Make Reservation</Link></li>
+              <li><Link to="/customer/reservations" className="ov-footer-link">Make Reservation</Link></li>
             </ul>
           </div>
 

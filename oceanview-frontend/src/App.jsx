@@ -19,10 +19,11 @@ import ResetPassword from "./pages/ResetPassword";
 
 // admin pages
 import AdminBills from "./pages/admin/AdminBills";
-import AdminProfile from "./pages/admin/AdminProfile";
+import AdminProfile from "./pages/admin/AdminProfile"; // ✅ fixed
 import AdminQuestions from "./pages/admin/AdminQuestions";
 import AdminReservations from "./pages/admin/AdminReservations";
 import AdminUsers from "./pages/admin/AdminUsers";
+import RequireAdmin from "./routes/RequireAdmin";
 
 // staff pages
 import StaffBills from "./pages/staff/StaffBills";
@@ -39,7 +40,6 @@ import CustomerReservationHistory from "./pages/customer/CustomerReservationHist
 import CustomerReservations from "./pages/customer/CustomerReservations";
 
 // route guards
-import RequireAdmin from "./routes/RequireAdmin";
 import RequireCustomer from "./routes/RequireCustomer";
 import RequireStaff from "./routes/RequireStaff";
 
@@ -61,11 +61,10 @@ export default function App() {
           <Route path="/reset-password" element={<ResetPassword />} />
         </Route>
 
-        {/* ✅ Admin Protected Layout */}
         <Route element={<RequireAdmin />}>
           <Route path="/admin" element={<AdminLayout />}>
-            <Route index element={<AdminUsers />} />
-            <Route path="users" element={<AdminUsers/>} />
+            <Route index element={<AdminUsers />} /> {/* ✅ default admin page */}
+            <Route path="users" element={<AdminUsers />} />
             <Route path="reservations" element={<AdminReservations />} />
             <Route path="questions" element={<AdminQuestions />} />
             <Route path="bills" element={<AdminBills />} />

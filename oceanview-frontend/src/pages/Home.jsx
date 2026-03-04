@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
-import { default as hero, default as room1, default as room2, default as room3 } from "../assets/hero.jpg";
+import room3 from "../assets/3.jpg";
+import room2 from "../assets/4.jpg";
+import room1 from "../assets/5.jpg";
+import hero from "../assets/hero.jpg";
+
+const images = [hero, room1, room2, room3];
 
 export default function Home() {
   return (
@@ -23,7 +28,7 @@ export default function Home() {
             </p>
 
             <div className="d-flex gap-3 flex-wrap">
-              <Link className="btn ov-btn-dark px-4" to="/reservations/new">
+              <Link className="btn ov-btn-dark px-4" to="/customer/reservations">
                 Get Started
               </Link>
 
@@ -65,7 +70,7 @@ export default function Home() {
           </div>
 
           <div className="mt-4">
-            <Link className="btn ov-btn-light px-4" to="/reservations/new">
+            <Link className="btn ov-btn-light px-4" to="/customer/reservations">
               Get Started
             </Link>
           </div>

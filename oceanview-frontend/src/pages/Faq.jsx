@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import hero from "../assets/hero.jpg";
+import hero from "../assets/2.jpg";
 
 const FAQS = [
   {
@@ -66,7 +66,7 @@ export default function Faq() {
                 <div className="d-flex align-items-center justify-content-between gap-3 flex-wrap">
                   <h2 className="ov-h2 mb-0">FAQs</h2>
 
-                  <Link to="/reservations/new" className="btn ov-btn-dark">
+                  <Link to="/customer/reservations" className="btn ov-btn-dark">
                     Make Reservation
                   </Link>
                 </div>
@@ -181,7 +181,7 @@ export default function Faq() {
                   Click below to create a new reservation.
                 </p>
 
-                <Link to="/reservations/new" className="btn ov-btn-dark w-100">
+                <Link to="/customer/reservations" className="btn ov-btn-dark w-100">
                   Make Reservation
                 </Link>
 

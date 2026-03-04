@@ -1,5 +1,5 @@
 import { useState } from "react";
-import aboutImg from "../assets/hero.jpg";
+import aboutImg from "../assets/1.jpg";
 import logo from "../assets/logo.png";
 
 export default function About() {

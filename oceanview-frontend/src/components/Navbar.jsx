@@ -39,7 +39,7 @@ export default function Navbar() {
               <Link className="btn ov-btn" to="/register">Register</Link>
             </li>
             <li className="nav-item">
-              <Link className="btn ov-btn-dark" to="/reservations/new">
+              <Link className="btn ov-btn-dark" to="/customer/reservations">
                 Make Reservation
               </Link>
             </li>

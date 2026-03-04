@@ -5,7 +5,7 @@ export default function RequireStaff() {
   const role = (localStorage.getItem("ov_role") || "").toUpperCase();
 
   if (!token) return <Navigate to="/login" replace />;
-  if (role !== "STAFF") return <Navigate to="/" replace />;
+  if (role !== "ADMIN") return <Navigate to="/" replace />;
 
   return <Outlet />;
 }

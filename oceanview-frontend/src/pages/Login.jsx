@@ -49,6 +49,7 @@ export default function Login() {
 
     // default CUSTOMER
     return navigate("/customer/reservations", { replace: true });
+    
   }
 
   async function onSubmit(e) {
