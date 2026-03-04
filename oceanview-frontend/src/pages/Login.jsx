@@ -45,7 +45,7 @@ export default function Login() {
     const r = String(role || "").toUpperCase();
 
     if (r === "ADMIN") return navigate("/admin/users", { replace: true });
-    if (r === "STAFF") return navigate("/staff/dashboard", { replace: true });
+    if (r === "STAFF") return navigate("/staff/reservations", { replace: true });
 
     // default CUSTOMER
     return navigate("/customer/dashboard", { replace: true });

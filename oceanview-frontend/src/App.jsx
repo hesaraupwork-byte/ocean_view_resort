@@ -22,6 +22,14 @@ import AdminReservations from "./pages/admin/AdminReservations";
 import AdminUsers from "./pages/admin/AdminUsers";
 import RequireAdmin from "./routes/RequireAdmin";
 
+import StaffLayout from "./layouts/StaffLayout";
+import StaffBills from "./pages/staff/StaffBills";
+import StaffGuide from "./pages/staff/StaffGuide";
+import StaffProfile from "./pages/staff/StaffProfile";
+import StaffQuestions from "./pages/staff/StaffQuestions";
+import StaffReservations from "./pages/staff/StaffReservations";
+import RequireStaff from "./routes/RequireStaff";
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -51,6 +59,22 @@ export default function App() {
             <Route path="profile" element={<AdminProfile />} />
           </Route>
         </Route>
+
+
+        {/* STAFF Protected Layout */}
+<Route element={<RequireStaff />}>
+  <Route path="/staff" element={<StaffLayout />}>
+    <Route index element={<StaffReservations />} />
+    <Route path="reservations" element={<StaffReservations />} />
+    <Route path="bills" element={<StaffBills />} />
+    <Route path="questions" element={<StaffQuestions />} />
+    <Route path="guide" element={<StaffGuide />} />
+    <Route path="profile" element={<StaffProfile />} />
+  </Route>
+</Route>
+
+
+        
 
         {/* optional fallback */}
         <Route path="*" element={<Home />} />
